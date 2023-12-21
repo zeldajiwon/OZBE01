@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=dege">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐러셀 복습</title>
+    <style>
+        #imageContainer {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="imageContainer">
+        <img src="../1회차/사토루.png" alt="사토루">
+        <img src="../1회차/스구루.png" alt="스그루">
+        <img src="../1회차/스쿠나짤.gif" alt="스쿠나">
+    </div>
+    <button id="nextButton">다음</button>
+    <button id="button1">사토루</button>
+    <button id="button2">스그루</button>
+    <button id="button3">스쿠나</button>
+   
+    <script>
+     const imageContainer = document.getElementById('imageContainer');
+     const images = document.querySelectorAll('#imageContainer img');  
+     const nextButton = document.getElementById('nextButton'); 
+     const button1 = document.getElementById('button1');
+     const button2 = document.getElementById('button2');
+     const button3 = document.getElementById('button3');
+
+     let currentImageIndex = 0;
+
+     nextButton.addEventListener('click', function(){
+        currentImageIndex = (currentImageIndex + 1) % images.length
+        updateImage();
+     });
+
+     button1.addEventListener('click', function(){
+        currentImageIndex = 0;
+        updateImage();
+     });
+
+     button2.addEventListener('click', function(){
+        currentImageIndex = 1;
+        updateImage();
+     });
+
+     button3.addEventListener('click', function(){
+        currentImageIndex = 2;
+        updateImage();
+     });
+
+     function updateImage() {
+        images.forEach((image, index) => {
+            if (index === currentImageIndex) {
+                image.style.display = 'block';
+            } else {
+                image.style.display = 'none';
+            }
+     });
+     }
+    </script>
+</body>
+</html>
