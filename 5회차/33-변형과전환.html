@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>변형과 전환</title>
+    <style>
+    .parent {
+        display: inline-block; /* 수정: incline-block -> inline-block */
+        margin: 0 20px;
+    }
+
+    .child { /* 수정: .chil -> .child */
+        width: 150px;
+        height: 150px;
+        background-color: teal;
+    }
+    
+    /* 수정: nth-child에서 transform 속성이 중복되어 있으므로 주석 처리
+    .parent:nth-child(1) > .child { transform: translate(30px, 50px);}
+    .parent:nth-child(2) > .child { transform: scale(1.2, 0.8);}
+    .parent:nth-child(3) > .child { transform: skew(45deg);}
+    .parent:nth-child(3) > .child { transform: rotate(85deg);}
+    */
+
+    .parent:nth-child(4):hover > .child { /* 수정: .hover 추가 및 transition 속성 조정 */
+        width: 300px;
+        height: 300px;
+        background-color: orange;
+        transition: width 5s ease-in 2s; /* 수정: 한 줄로 transition 속성 통합 */
+    }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>항공권 예약 및 여행정보 | 대한항공</title>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      html{
+        font-size: 16px;
+      }
+      body{
+        margin: 0;
+      }
+      .flex{
+        display: flex;
+      }
+      .main{
+        padding: 4rem 0 5rem;
+      }
+    </style>
+    <link href="header.css" rel="stylesheet">
+    <link href="info.css" rel="stylesheet">
+    <link href="notice.css" rel="stylesheet">
+    <link href="banner.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content flex">
+        <div class="header-content__logo">KOREAN AIR</div>
+        <nav class="header-content__nav flex">
+          <ul>
+            <li class="active">예약 v</li>
+            <li>공항 v</li>
+            <li>기내 v</li>
+            <li>스카이패스 v</li>
+          </ul>
+        </nav>
+        <div class="header-content__input flex">
+            <span class="icon glass">
+              <input type="button" value="&#128269;"> 
+            <span>
+              <input type="text" class="search" placeholder="궁금한 것을 검색해보세요.">
+            </span> 
+            <span class="icon menu">
+              <input type="button" value="&#9776;"> 
+            </span>
+            <span>
+                <input type="button" class="login" value="로그인"> 
+              </span>
+        </div>
+      </div>
+      
+    </header>
+
+    <main class="main">
+      <section class="info">
+        <div class="info__text">
+            <h1>*기상 악화 영향 항공편 운항 안내(제주)</h1>
+        </div>
+       
+        <form action="/submit_reservation" method="post">
+            <label for="from">출발지:</label>
+            <input type="text" id="from" name="from" required>
+      
+            <label for="to">도착지:</label>
+            <input type="text" id="to" name="to" required>
+      
+            <label for="departure-date">출발일:</label>
+            <input type="date" id="departure-date" name="departure_date" required>
+      
+            <label for="passenger-count">승객 수:</label>
+            <select id="passenger-count" name="passenger_count" required>
+              <option value="1">1명</option>
+              <option value="2">2명</option>
+              <option value="3">3명</option>
+      </section>
+      <section>
+        
+            
+          </select>
+          <button type="submit">예약하기</button>
+        </form>
+      </section>
+
+      <section class="notice">
+        <h2 class="notice__title">항공권 예약</h2>
+        <div class="notice__container flex">
+            <div class="banner flex">
+                <div class="banner__text">항공권 가격이 <br> 궁금하다면? </div>
+            <button class="banner__button">항공편 검색</button>
+            </div>
+            <article class="notice__item flex">
+              <div class="notice__thumb"></div>
+              <div class="notice__content">
+                <div class="notice__content__title">쌓이는 속도가 다르다! <br>대한항공카드 <br>혜택 알아보기</div>
+                <div class="notice__content__address">대한항공</div>
+                <div class="notice__content__pay">카드발급</div>
+              </div>
+            </article>
+            <article class="notice__item flex">
+                <div class="notice__thumb"></div>
+                <div class="notice__content">
+                  <div class="notice__content__title">두꺼운 외투는 맡기고<br>가벼운 마음으로 떠나보세요.</div>
+                  <div class="notice__content__address">대한항공</div>
+                  <div class="notice__content__pay">짐 맡기기 서비스</div>
+                </div>
+              </article> <article class="notice__item flex">
+                <div class="notice__thumb"></div>
+                <div class="notice__content">
+                  <div class="notice__content__title">동남아 신규 취향 및 중국 운항 재개 <br>노선  스케줄을 확인하세요.</div>
+                  <div class="notice__content__address">대한항공</div>
+                  <div class="notice__content__pay">아시아 여행</div>
+                </div>
+              </article>
+        
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <section class="footer__menu">
+                </section>
+                <section class="footer__info">
+                    <div>
+                        <strong>대표:</strong>우기홍 외 1명ㅣ<strong>사업자등록번호:</strong>110-81-14794
+                    </div>
+                    <div>
+                        <strong>통신판매업신고:</strong> 강서 제 16-3010
+                    </div>
+                    <div>
+                        <strong>주소</strong> 서울특별시 강서구 하늘길 160
+                    </div>
+                    <div>
+                        <strong>전화</strong> 1588-2001 / 02-2656-2001 <strong>개인정보보호책임자:</strong>장성현 대한항공 부사장
+                    </div>
+                </section>
+                <div class="footer__apps">
+                    <div class="footer__appdown">대한항공 앱 다운로드</div>
+                    <div class="footer__appbt flex">
+                        <button>App Store</button>
+                        <button>Google Play</button>
+                    </div>
+                </div>
+                <nav class="footer__nav flex">
+                    <br>
+                    <ul>
+                        <li><strong>회사소개</strong></li><br>
+                        <li>대한항공에 대하여</li>
+                        <li>투자정보</li>
+                        <li>지속가능경영</li>
+                        <li>뉴스룸</li>
+
+                    </ul>
+                    <ul>
+                        <li><strong>고객지원</strong></li><br>
+                        <li>공지사항</li>
+                        <li>고객의 말씀</li>
+                        <li>서비스 센터</li>
+                        <li>e-서식함</li>
+                        <li>웹 접근성</li>
+                    </ul>
+                    <ul>
+                        <li><strong>약관 및 규정</strong></li><br>
+                        <li>개인정보 처리방침</li>
+                        <li>이용약관</li>
+                        <li>운송약관 및 고지사항</li>
+                        <li>이용약관</li>
+                        <li>소비자 안전 관련 정보</li>
+                        <li>운임 및 서비스 요금표</li>
+                    </ul>
+                    <ul>
+                        <li><strong>기타 안내</strong></li><br>
+                        <li>기업 출장 여행</li>
+                        <li>고객 안내 서비스</li>
+                        <li>항공교통이용자 서비스 계획</li>
+                        <li>항공교통이용자 피해 구제</li>
+                        <li>관련 사이트</li>
+                        <li>사이트 맵</li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </footer>
+  </div>
+  <span>&copy; 1997-2023 KOREAN AIR</span>
+</body>
+</html>
