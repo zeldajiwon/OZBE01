@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Snowman</title>
+    <style>
+        body {
+            background-color: #87CEEB; 
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .snowman {
+            text-align: center;
+        }
+
+        .head, .body, .bottom {
+            background-color: #fff; 
+            border-radius: 50%;
+            margin: 5px 0;
+        }
+
+        .head {
+            width: 100px;
+            height: 100px;
+            background-color: #FFD700;
+            position: relative;
+        }
+
+        .head .hat {
+            width: 60px;
+            height: 20px;
+            background-color: #000; 
+            position: absolute;
+            top: 5px;
+            left: 20px;
+        }
+
+        .body {
+            width: 120px;
+            height: 120px;
+            background-color: #8B4513; 
+        }
+
+        .bottom {
+            width: 150px;
+            height: 150px;
+            background-color: #00FA9A; 
+        }
+
+        .eyes {
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .eyes.left {
+            top: 30px;
+            left: 30px;
+        }
+
+        .eyes.right {
+            top: 30px;
+            left: 60px;
+        }
+
+        .nose {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid #FF4500;
+            position: absolute;
+            top: 40px;
+            left: 50px;
+        }
+
+        .mouth {
+            width: 30px;
+            height: 20px;
+            background-color: #000; 
+            border-radius: 0 0 50% 50%;
+            position: absolute;
+            top: 50px;
+            left: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="snowman">
+        <div class="head">
+            <div class="hat"></div>
+            <div class="eyes left"></div>
+            <div class="eyes right"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="body"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>

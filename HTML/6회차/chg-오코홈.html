@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오즈코딩스쿨</title>
+  <link href="../6회차/chg-오코홈.css" rel="stylesheet">
+</head>
+<body>
+  <header class="responsive">
+    <a href="#home">오즈코딩스쿨</a>
+    <a href="#HTMLlesson">HTML</a>
+    <a href="#CSSlesson">CSS</a>
+    <a href="javascript:void(0)" class="blink" id="fastLink" onclick="openLink()">빠른강의</a>
+    <a href="https://ozcodingschool.com/" class="icon blink" id="fastLinkImage">
+      <img src="maxspeed.jpeg" alt="빠른강의 이미지">
+    </a>
+    <a href="javascript:void(0)" class="icon" onclick="myFunction()">☰ Menu</a>
+  </header>
+
+  <div class="fast-lesson" style="display: none;" id="fastLessonContainer">
+    <img src="maxspeed.jpeg" alt="빠른강의 이미지" onclick="openLink()">
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.querySelector("header");
+      var fastLessonContainer = document.getElementById("fastLessonContainer");
+
+      if (x.classList.contains("responsive")) {
+        x.classList.remove("responsive");
+        fastLessonContainer.style.display = "none";
+      } else {
+        x.classList.add("responsive");
+        fastLessonContainer.style.display = "block";
+      }
+    }
+
+    function openLink() {
+      window.location.href = "https://ozcodingschool.com/";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  background-color: #35195a;
+  color: white;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+}
+
+fieldset {
+  width: 400px;
+  height: 500px; /* 높이를 조정했습니다. */
+  padding: 30px;
+  border: 30px double rgb(147, 64, 140);
+  background-color: rgb(145, 100, 142);
+  background-clip: padding-box;
+}
+
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/* 핸드폰 입력 상자 크기 조정 */
+input[name^="phonenumber"] {
+  width: calc(33.33% - 50px);
+  margin-right: 6px;
+  padding: 8px; /* 더 작은 패딩 적용 */
+}
+
+/* 버튼 스타일 조정 */
+#create, #cancel {
+  background-color: #35195a;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+#create:hover, #cancel:hover {
+  background-color: #6a4c73;
+}

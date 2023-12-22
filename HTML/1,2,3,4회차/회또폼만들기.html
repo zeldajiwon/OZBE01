@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="style1.css" rel="stylesheet">
+    <title>powerlifting newbie welcome</title>
+</head>
+<body>
+    <header>
+        <h1>회원가입</h1>
+    </header>
+    <br>
+    <main>
+        <form>
+            <fieldset>
+                <legend>필수입력사항</legend>
+                <ul>
+                    <li>
+                        <label for="name">이름:</label>
+                        <input type="text" name="name" id="name" placeholder="사토루">
+                    </li>
+                    <br>
+                    <li>
+                        <label for="id">아이디:</label>
+                        <input type="text" name="id" id="id" placeholder="6자 이상 20자 미만 공백 없이 입력">
+                    </li>
+                    <br>
+                    <li>
+                        <label for="password">비밀번호:</label>
+                        <input type="text" name="password" id="password" placeholder="비밀번호를 입력하세요.">
+                    </li>
+                    <br>
+                    <li>
+                        <label for="email">이메일:</label>
+                        <input type="text" name="email" id="email" placeholder="abc@powerlifting">
+                    </li>
+                    <br>
+                    <li>
+                        <label for="phonenumber1">핸드폰:</label>
+                        <input type="text" name="phonenumber1" id="phonenumber1" maxlength="3" placeholder="&nbsp;&nbsp;010"> -
+                        <input type="text" name="phonenumber2" id="phonenumber2" maxlength="4" placeholder="&nbsp;&nbsp;1234"> -
+                        <input type="text" name="phonenumber3" id="phonenumber3" maxlength="4" placeholder="&nbsp;&nbsp;5678">
+                    </li>
+                </ul>
+                    <footer>
+                    <select id="weightclass" name="weightclass">
+                        <option value="1">체급</option>
+                        <option value="2">오픈</option>
+                        <option value="3">주니어</option>
+                        <option value="4">마스터즈</option>
+                      </select>
+                      <br><br><br>
+                   <label for="create">   
+                    <input type="submit" value="가입하기" name="create" id="create"></label> 
+                    &nbsp;
+                    <label for="cancel">  
+                    <input type="reset" value="취소하기" name="cancel" id="cancel"></label>               
+                    </footer>
+                </fieldset>
+                </form>
+    </main>
+</body>
+</html>
