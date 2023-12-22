@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>주술회전 영역전개</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        .content-box {
+            background-color: #fff;
+            position: relative;
+            right: 50px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            width: 600px;
+            height: 400px;
+        }
+
+        button {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu {
+            padding: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        .menu > li {
+            display: inline-block;
+            text-align: center;
+        }
+
+        li > a {
+            display: inline-block;
+            width: 150px; /* 수정: 메뉴 너비 증가 */
+            padding: 10px;
+            text-decoration: none;
+            color: black; /* 수정: 링크 색상 추가 */
+        }
+
+        a:hover {
+            color: white;
+            background-color: gray;
+        }
+
+        a:active {
+            color: white;
+            background-color: black;
+        }
+
+        li:nth-child(n) {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#" onclick="navigateTo('료멘')">료멘 스쿠나</a></li>
+        <li><a href="#" onclick="navigateTo('사토루')">고죠 사토루</a></li>
+        <li><a href="#" onclick="navigateTo('메구미')">후시구로 메구미</a></li>
+    </ul>
+    <header>
+        <h1>영역전개 모음</h1>
+    </header>
+
+    <main>
+        <div class="content-box">
+            <p id="contentText"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                료-이키텐카이 후쿠마미주시</p>
+        </div>
+
+        <div class="container">
+            <img id="image" src="../1,2,3,4회차/료멘스쿠나.webp" width="600" height="400">
+        </div>
+        <div>
+            <button onclick="prevImage()">이전</button>
+            <button onclick="nextImage()">다음</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 주술회전 영역전개 모음</p>
+    </footer>
+
+    <script>
+        const images = [
+            "../1,2,3,4회차/료멘스쿠나.webp",
+            "../1,2,3,4회차/사토루.png",
+            "../1,2,3,4회차/메구미.gif"
+        ];
+
+        const contents = [
+            "료-이키텐카이 후쿠마미주시",
+            "료-이키텐카이 무-료쿠쇼",
+            "료-이키텐카이 간고안예테"
+        ];
+
+        let currentIndex = 0;
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateContent();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateContent();
+        }
+
+        function updateContent() {
+            document.getElementById("image").src = images[currentIndex];
+            document.getElementById("contentText").textContent = contents[currentIndex];
+        }
+
+        function navigateTo(character) {
+            switch (character) {
+                case '료멘':
+                    window.location.href = 'https://namu.wiki/w/%EB%A3%8C%EB%A9%98%EC%8A%A4%EC%BF%A0%EB%82%98(%EC%A3%BC%EC%88%A0%ED%9A%8C%EC%A0%84)';
+                    break;
+                case '사토루':
+                    window.location.href = 'https://namu.wiki/w/%EA%B3%A0%EC%A3%A0%20%EC%82%AC%ED%86%A0%EB%A3%A8';
+                    break;
+                case '메구미':
+                    window.location.href = 'https://namu.wiki/w/%ED%9B%84%EC%8B%9C%EA%B5%AC%EB%A1%9C%20%EB%A9%94%EA%B5%AC%EB%AF%B8';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
