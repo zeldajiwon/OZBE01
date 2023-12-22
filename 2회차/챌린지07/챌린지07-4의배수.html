@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=dege">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4의 배수 5개씩 만들기</title>
+</head>
+<body>
+    <h1>4의 배수 5개씩 출력 (500까지~)</h1>
+    <div id="output"></div>
+    <script>
+      const outputDiv = document.getElementById("output");
+      let count = 0;
+      let num = 4;
+
+      while (num <= 500 && count < 5) {
+        outputDiv.innerHTML += num + ' ';
+        num += 4;
+        count ++;
+
+        if (count===5) {
+            outputDiv.innerHTML += '<br>';
+            count = 0;
+        }
+      }
+    </script>
+</body>
+</html>

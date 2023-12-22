@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 만들기</title>
+</head>
+<body>
+    <h1>스스로 빛을 내는 천체 만들기</h1>
+    <h3>1번 별</h3>
+    <h3_1 id="starContainer1"></h3_1>
+    <br>
+    <h3>2번 별</h3>
+    <h3_2 id="starContainer2"></h3_2>
+    <br>
+    <h3>3번 별</h3>
+    <h3_3 id="starContainer3"></h3_3>
+    
+    <script>
+        const starContainer1 = document.getElementById("starContainer1");
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                starContainer1.innerHTML += '*';
+            }
+            // 줄 바꿈
+            starContainer1.innerHTML += '<br>';
+        }
+
+        const starContainer2 = document.getElementById("starContainer2");
+        for (let a = 1; a <= 5; a++) {
+            for (let b = 1; b <= a; b++) {
+                starContainer2.innerHTML += '*';
+            }
+            // 줄 바꿈
+            starContainer2.innerHTML += '<br>';
+        }
+        for (let a = 5 - 1; a >= 1; a--) {
+            for (let b = 1; b <= a; b++) {
+                starContainer2.innerHTML += '*';
+            }
+            // 줄 바꿈
+            starContainer2.innerHTML += '<br>';
+        }
+
+        const starContainer3 = document.getElementById("starContainer3");
+        let starCount = 1;
+        for (let i = 1; i <= 9; i += 2) {
+            for (let j = 1; j <= i; j++) {
+                starContainer3.innerHTML += '*';
+            }
+            // 줄 바꿈
+            starContainer3.innerHTML += '<br>';
+        }
+        for (let i = 7; i >= 1; i -= 2) {
+            for (let j = 1; j <= i; j++) {
+                starContainer3.innerHTML += '*';
+            }
+            // 줄 바꿈
+            starContainer3.innerHTML += '<br>';
+        }
+    </script>
+</body>
+</html>
