@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지원이의 계산기</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #calculator {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+        }
+
+        #display {
+            padding: 10px;
+            text-align: right;
+            font-size: 24px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s;
+        }
+
+        button:active {
+            background-color: #ddd;
+        }
+
+        button.operator {
+            background-color: #ff8c00;
+            color: #fff;
+        }
+
+        button.operator:active {
+            background-color: #e07d00;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calculator">
+        <div id="display">0</div>
+        <div id="buttons">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">/</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">*</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">-</button>
+            <button>0</button>
+            <button>.</button>
+            <button class="operator">=</button>
+            <button class="operator">+</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const display = document.getElementById("display");
+            const buttons = document.getElementById("buttons");
+
+            let currentValue = "0";
+            let operator = null;
+            let waitingForOperand = false;
+
+            buttons.addEventListener("click", function (event) {
+                const target = event.target;
+
+                if (target.tagName === "BUTTON") {
+                    const buttonText = target.textContent;
+
+                    switch (buttonText) {
+                        case "C":
+                            currentValue = "0";
+                            operator = null;
+                            waitingForOperand = false;
+                            break;
+
+                        case "=":
+                            if (operator !== null) {
+                                currentValue = calculate(parseFloat(currentValue), operator, parseFloat(currentValue));
+                                operator = null;
+                                waitingForOperand = true;
+                            }
+                            break;
+
+                        case "+":
+                        case "-":
+                        case "*":
+                        case "/":
+                            if (operator !== null) {
+                                currentValue = calculate(parseFloat(currentValue), operator, parseFloat(currentValue));
+                                operator = null;
+                                waitingForOperand = true;
+                            }
+                            operator = buttonText;
+                            break;
+
+                        default:
+                            if (waitingForOperand) {
+                                currentValue = buttonText;
+                                waitingForOperand = false;
+                            } else {
+                                currentValue = currentValue === "0" ? buttonText : currentValue + buttonText;
+                            }
+                            break;
+                    }
+                    display.textContent = currentValue;
+                }
+            });
+
+            function calculate(leftOperand, operator, rightOperand) {
+                switch (operator) {
+                    case "+":
+                        return leftOperand + rightOperand;
+                    case "-":
+                        return leftOperand - rightOperand;
+                    case "*":
+                        return leftOperand * rightOperand;
+                    case "/":
+                        return leftOperand / rightOperand;
+                    default:
+                        return rightOperand;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

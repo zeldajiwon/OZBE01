@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+<body>
+    <button id="startStopButton">시작</button>
+    <span id="stopwatchDisplay">0초</span>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            let stopwatch = {
+                startTime: null,
+                running: false,
+                intervalId: null,
+
+                start() {
+                    if (!this.running) {
+                        this.startTime = new Date();
+                        this.running = true;
+                        this.intervalId = setInterval(this.updateDisplay.bind(this), 1000);
+                        document.getElementById("startStopButton").textContent = "중지";
+                    }
+                },
+
+                stop() {
+                    if (this.running) {
+                        clearInterval(this.intervalId);
+                        this.running = false;
+                        document.getElementById("startStopButton").textContent = "재시작";
+                    }
+                },
+
+                resume() {
+                    if (!this.running) {
+                        const elapsedTime = new Date() - this.startTime;
+                        this.startTime = new Date();
+                        this.running = true;
+                        this.intervalId = setInterval(this.updateDisplay.bind(this), 1000);
+                        document.getElementById("startStopButton").textContent = "중지";
+                    }
+                },
+
+                updateDisplay() {
+                    const currentTime = new Date();
+                    const elapsedSeconds = Math.floor((currentTime - this.startTime) / 1000);
+                    document.getElementById("stopwatchDisplay").textContent = `${elapsedSeconds}초`;
+                }
+            };
+
+            document.getElementById("startStopButton").addEventListener("click", function () {
+                if (stopwatch.running) {
+                    stopwatch.stop();
+                } else {
+                    stopwatch.start();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    </script>
+</body>
+    </html>
